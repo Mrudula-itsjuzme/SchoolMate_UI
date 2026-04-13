@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import AcademicsHubPage from './pages/AcademicsHubPage'
 import DashboardPage from './pages/DashboardPage'
 import StudentDetailsPage from './pages/StudentDetailsPage'
 import UnderConstructionPage from './pages/UnderConstructionPage'
@@ -37,7 +38,6 @@ const utilityItems = [
 ]
 
 const routeLabelMap = {
-  '/academics': 'Academics',
   '/finance': 'Finance',
   '/transport': 'Transport',
   '/accounts': 'Accounts',
@@ -227,6 +227,7 @@ function Layout() {
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/students" element={<StudentDetailsPage />} />
+            <Route path="/academics" element={<AcademicsHubPage />} />
 
             {Object.entries(routeLabelMap).map(([path, title]) => (
               <Route
