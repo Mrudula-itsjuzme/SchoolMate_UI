@@ -17,6 +17,7 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import AcademicsHubPage from './pages/AcademicsHubPage'
 import DashboardPage from './pages/DashboardPage'
+import FinancePage from './pages/FinancePage'
 import StudentDetailsPage from './pages/StudentDetailsPage'
 import UnderConstructionPage from './pages/UnderConstructionPage'
 import './App.css'
@@ -229,13 +230,16 @@ function Layout() {
             <Route path="/students" element={<StudentDetailsPage />} />
             <Route path="/academics" element={<AcademicsHubPage />} />
 
-            {Object.entries(routeLabelMap).map(([path, title]) => (
-              <Route
-                key={path}
-                path={path}
-                element={<UnderConstructionPage title={title} />}
-              />
-            ))}
+            <Route path="/finance" element={<FinancePage />} />
+            {Object.entries(routeLabelMap)
+              .filter(([path]) => path !== '/finance')
+              .map(([path, title]) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={<UnderConstructionPage title={title} />}
+                />
+              ))}
 
             <Route path="*" element={<UnderConstructionPage title="Page" />} />
           </Routes>

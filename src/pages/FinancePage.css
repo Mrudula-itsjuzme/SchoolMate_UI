@@ -1,0 +1,411 @@
+/* src/pages/FinancePage.css */
+
+.finance-page {
+  padding: 1.5rem;
+  background-color: #f0f4f8; /* Light sky blue background matching the screenshot */
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.finance-header-tools {
+  display: flex;
+  gap: 1.5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  align-items: center;
+  border: 1px solid #d1d9e6;
+}
+
+.finance-tool-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.finance-tool-group label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.finance-tool-group select,
+.finance-tool-group input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  font-size: 0.9rem;
+}
+
+.finance-tool-group .select-btn {
+  background: #7389ae;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.finance-option-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #eef2f7;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccd6e0;
+}
+
+.finance-option-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+/* Main Layout Grid */
+.finance-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+}
+
+/* Left Panel Content */
+.finance-content-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section Styling */
+.finance-section-box {
+  background: white;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.finance-section-header {
+  background: #7389ae;
+  color: white;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Student Info Row */
+.student-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  padding: 1rem;
+  gap: 1rem;
+  background: #edf2f7;
+}
+
+.info-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-field label {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.info-field span, .info-field input {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.35rem 0.5rem;
+  background: white;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+}
+
+.info-field.highlight span {
+  background: #ffeb3b; /* Admission No yellow highlight from img */
+  border-color: #fdd835;
+}
+
+.info-field.id-highlight span {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.name-banner {
+  grid-column: span 3;
+  background: #ff9800; /* Orange banner from img */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remarks & Fees Row */
+.remarks-fees-row {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 1.5rem;
+}
+
+.remarks-box textarea {
+  width: 100%;
+  height: 100px;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  resize: none;
+  font-family: inherit;
+}
+
+/* Table Styling */
+.finance-table-wrap {
+  overflow-x: auto;
+}
+
+.finance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.finance-table th {
+  background: #7389ae;
+  color: white;
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #5a6e8f;
+}
+
+.finance-table td {
+  padding: 0.5rem;
+  border: 1px solid #d1d9e6;
+  background: #fff;
+}
+
+.finance-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.finance-table .amount-col {
+  text-align: right;
+  font-weight: 600;
+}
+
+.finance-table .paid-col {
+  background: #e6fffa !important; /* Soft green for paid */
+  color: #2c7a7b;
+}
+
+.finance-table .balance-col {
+  background: #fff5f5 !important; /* Soft red for balance */
+  color: #c53030;
+}
+
+/* Concession Section */
+.concession-summary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.concession-details-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  padding: 1rem;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.concession-details-grid div:nth-child(odd) {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.concession-details-grid div:nth-child(even) {
+  padding: 0.35rem 0.5rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+}
+
+/* Totals Box */
+.totals-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.total-row span {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.total-row .amount-box {
+  width: 120px;
+  padding: 0.5rem;
+  text-align: right;
+  background: #e6fffa;
+  border: 1px solid #38b2ac;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #2c7a7b;
+}
+
+.total-row .amount-box.grand {
+  background: #c6f6d5;
+  border-color: #48bb78;
+}
+
+.total-row .amount-box.balance {
+  background: #fed7d7;
+  border-color: #f56565;
+  color: #c53030;
+}
+
+/* Right Sidebar Student List */
+.student-lookup-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #edf2f7;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d1d9e6;
+  max-height: calc(100vh - 200px);
+}
+
+.list-toggle-btns {
+  display: flex;
+  gap: 1px;
+  background: #cbd5e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.list-toggle-btns button {
+  flex: 1;
+  border: none;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.list-toggle-btns button.active {
+  background: white;
+  color: #2b6cb0;
+}
+
+.lookup-list {
+  flex: 1;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+}
+
+.lookup-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #edf2f7;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.lookup-item:hover {
+  background: #f7fafc;
+}
+
+.lookup-item.selected {
+  background: #ebf8ff;
+  border-left: 3px solid #3182ce;
+}
+
+.lookup-item .roll {
+  color: #c53030;
+  font-weight: bold;
+  width: 30px;
+}
+
+/* Footer Actions */
+.finance-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  background: #edf2f7;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+}
+
+.action-btn {
+  padding: 0.6rem 1rem;
+  background: #7389ae;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: #5a6e8f;
+  transform: translateY(-1px);
+}
+
+.action-btn.nav {
+  background: #aab8ca;
+  color: #4a5568;
+}
+
+.action-btn.print {
+  background: #ed8936;
+}
+
+.action-btn.raise {
+  background: #5a67d8;
+}
+
+.action-btn.view-detail {
+  background: #ecc94b;
+  color: #744210;
+}
+
+.total-student-badge {
+  color: #2b6cb0;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
