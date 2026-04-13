@@ -9,6 +9,7 @@ import {
   Filter,
   GraduationCap,
   HeartHandshake,
+  MapPinHouse,
   Plus,
   Pencil,
   Printer,
@@ -29,7 +30,8 @@ const baseStudent = {
     motherName: 'K. Karuna',
     fatherOccupation: 'IT',
     motherOccupation: '-',
-    parentContact: '994023192457',
+    parentContactPrimary: '994023192457',
+    parentContactSecondary: '994023192458',
   },
   personal: {
     dateOfBirth: '20 Apr 2022',
@@ -53,8 +55,17 @@ const baseStudent = {
   },
   additional: {
     aadhaarNumber: '-',
+    fatherAadhaar: '-',
+    motherAadhaar: '-',
     shortName: 'NIVEDHA',
     motherAccountNumber: '-',
+  },
+  address: {
+    houseNo: '12-45/3',
+    street: 'MIG Colony',
+    area: 'Madhapur',
+    city: 'Hyderabad',
+    pinCode: '500081',
   },
   behavior: {
     misbehaviorRecords: '0',
@@ -119,6 +130,7 @@ const makeStudent = (overrides) => ({
   academic: { ...baseStudent.academic, ...overrides.academic },
   transport: { ...baseStudent.transport, ...overrides.transport },
   additional: { ...baseStudent.additional, ...overrides.additional },
+  address: { ...baseStudent.address, ...overrides.address },
   behavior: { ...baseStudent.behavior, ...overrides.behavior },
   fees: { ...baseStudent.fees, ...overrides.fees },
   payments: overrides.payments || baseStudent.payments,
@@ -305,7 +317,8 @@ function StudentDetailsPage() {
           ['Mother Name', selectedStudent.family.motherName],
           ['Father Occupation', selectedStudent.family.fatherOccupation],
           ['Mother Occupation', selectedStudent.family.motherOccupation],
-          ['Parent Contact', selectedStudent.family.parentContact],
+          ['Parent Contact 1', selectedStudent.family.parentContactPrimary],
+          ['Parent Contact 2', selectedStudent.family.parentContactSecondary],
         ],
       },
       {
@@ -349,8 +362,22 @@ function StudentDetailsPage() {
         icon: BadgeInfo,
         rows: [
           ['Aadhaar Number', selectedStudent.additional.aadhaarNumber],
+          ['Father Aadhaar', selectedStudent.additional.fatherAadhaar],
+          ['Mother Aadhaar', selectedStudent.additional.motherAadhaar],
           ['Student Short Name', selectedStudent.additional.shortName],
           ['Mother A/C Number', selectedStudent.additional.motherAccountNumber],
+        ],
+      },
+      {
+        title: 'Address Information',
+        className: 'address-card',
+        icon: MapPinHouse,
+        rows: [
+          ['House No', selectedStudent.address.houseNo],
+          ['Street', selectedStudent.address.street],
+          ['Area', selectedStudent.address.area],
+          ['City', selectedStudent.address.city],
+          ['PIN Code', selectedStudent.address.pinCode],
         ],
       },
       {
@@ -441,7 +468,8 @@ function StudentDetailsPage() {
       family: {
         fatherName: 'Parent Name',
         motherName: '-',
-        parentContact: '9999999999',
+        parentContactPrimary: '9999999999',
+        parentContactSecondary: '8888888888',
       },
     })
 

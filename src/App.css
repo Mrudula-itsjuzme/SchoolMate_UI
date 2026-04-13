@@ -1574,6 +1574,15 @@
   color: #a77019;
 }
 
+.address-card {
+  border-color: #c8dfef;
+  background: #f5fbff;
+}
+
+.address-card header {
+  color: #2f6a95;
+}
+
 .behavior-card {
   border-color: #f1c1ce;
   background: #fff4f6;
