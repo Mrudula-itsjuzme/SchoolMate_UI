@@ -6,6 +6,19 @@ This repository replaces the default Vite starter README with a project-focused 
 
 ---
 
+## Project links and evidence
+
+| Item | Link / Note |
+|---|---|
+| Repository | https://github.com/Mrudula-itsjuzme/SchoolMate_UI |
+| Paper / reference | Frontend/product UI prototype; no paper attached |
+| Demo video | Not uploaded yet |
+| Deployment | Add Vercel/Netlify/GitHub Pages link here after hosting |
+| Dataset note | No dataset required; UI can later connect to mock or backend student data |
+| Result screenshots | Add dashboard, schedule, tasks, and responsive-layout screenshots under `screenshots/` |
+
+---
+
 ## Project purpose
 
 SchoolMate UI is a frontend prototype for organizing student-facing features such as dashboards, academic information, tasks, schedules, and learning resources.
